@@ -79,23 +79,27 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="bg-white pb-12">
+        <div className="bg-white pb-12 mt-16">
           <div className="relative">
             <div className="absolute inset-0 h-2/3 bg-gray-50"></div>
             <div className="relative mx-auto">
-              <div className="lg:mx-auto lg:max-w-6xl">
-                {/* <Image
-                  src="https://cdn.rareblocks.xyz/collection/clarity/images/hero/2/illustration.png"
+              <div className="lg:mx-auto md:max-w-xl lg:max-w-6xl shadow-md">
+                <Image
+                  src="/dash.png"
                   alt=""
-                  width={100}
-                  height={100}
-                  className="scale-110"
-                /> */}
+                  width={1440}
+                  height={1440}
+                  className="object-cover"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* <footer>
+        ;as
+      </footer> */}
     </div>
 
   );

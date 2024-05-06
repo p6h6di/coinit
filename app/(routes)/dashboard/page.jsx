@@ -56,7 +56,7 @@ function Dashboard() {
 
   return (
     <div className="mt-12">
-       <div className="flex flex-col space-y-3">
+       <div className="flex flex-col space-y-4">
         <h1 className="text-3xl font-medium">
           Hello, {user?.fullName} 👋
         </h1>
@@ -65,8 +65,38 @@ function Dashboard() {
         </p>
         <hr />
       </div>
-<div className='pt-6'></div>
+<div className='pt-6'>
+
       <CardInfo budgetList={budgetList} />
+</div>
+
+<div className='grid grid-cols-1 md:grid-cols-3 pt-12 gap-6'>
+  <div className='lg:col-span-2'>
+    <BarChartDashboard
+         budgetList={budgetList}
+   />
+
+<div className='pt-8 pb-12'>
+
+   <ExpenseListTable
+          expensesList={expensesList}
+          refreshData={()=>getBudgetList()}
+          />
+</div>
+  </div>
+  <div>
+    <h2 className='font-semibold text-2xl pb-4'>Latest Budgets</h2>
+              {budgetList?.length>0?budgetList.map((budget,index)=>(
+                <div className='my-4'>
+                  <BudgetItem budget={budget} key={index} />
+                </div>
+              ))
+            : null
+            }
+  </div>
+</div>
+
+
 
         {/* <h2 className='font-bold text-4xl'>Hi, {user?.fullName} ✌️</h2> 
         <p className='text-gray-500'>Here's what happenning with your money, Lets Manage your expense</p>
