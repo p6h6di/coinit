@@ -23,6 +23,7 @@ import {
 import { toast } from 'sonner';
 import { useRouter } from 'next/navigation';
 import EditBudget from '../_components/EditBudget';
+import { Icons } from '../../../../components/Icons';
 
 function ExpensesScreen({params}) {
     const {user}=useUser();
@@ -88,19 +89,20 @@ function ExpensesScreen({params}) {
    
   return (
     <div className='p-10'>
-        <h2 className='text-2xl font-bold gap-2 flex justify-between items-center'>
-        <span className='flex gap-2 items-center'> 
-        <ArrowLeft onClick={()=>route.back()} className='cursor-pointer'/>
+        <h2 className='text-2xl font-bold gap-2 flex justify-between items-center border-b pb-6'>
+         <Button onClick={()=>route.back()} variant="ghost" className='flex gap-2 items-center text-lg'> 
+        <Icons.arrow_left className='cursor-pointer size-5'/>
           My Expenses
-          </span> 
+          </Button> 
+ 
         <div className='flex gap-2 items-center'>
          <EditBudget budgetInfo={budgetInfo}
          refreshData={()=>getBudgetInfo()}  />
         
           <AlertDialog>
             <AlertDialogTrigger asChild>
-              <Button className="flex gap-2" variant="destructive"> 
-            <Trash/> Delete</Button>
+               <Button className="flex gap-2.5 text-red-500 border-red-500 hover:text-red-500 hover:bg-red-50" variant="outline"> 
+            <Icons.delete className="size-5 text-red-500" /> Delete</Button>
             </AlertDialogTrigger>
             <AlertDialogContent>
               <AlertDialogHeader>

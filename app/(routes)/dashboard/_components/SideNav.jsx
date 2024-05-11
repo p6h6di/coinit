@@ -29,12 +29,6 @@ const SideNav = () => {
       path: "/expenses",
       icon: <ReceiptText className="size-5" />,
     },
-    {
-      id: 4,
-      label: "Upgrade",
-      path: "/upgrade",
-      icon: <ShieldCheck className="size-5" />,
-    },
   ];
   return (
     <div className="fixed left-0 top-0 z-50 h-screen w-72 border-r">

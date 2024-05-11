@@ -19,6 +19,7 @@ import { db } from '../../../../utils/dbConfig'
 import { Budgets } from '../../../../utils/schema'
 import { eq } from 'drizzle-orm'
 import { toast } from 'sonner'
+import { Icons } from '../../../../components/Icons'
 function EditBudget({budgetInfo,refreshData}) {
     const [emojiIcon,setEmojiIcon]=useState(budgetInfo?.icon);
     const [openEmojiPicker,setOpenEmojiPicker]=useState(false);
@@ -55,7 +56,7 @@ function EditBudget({budgetInfo,refreshData}) {
     <div>
          <Dialog>
             <DialogTrigger asChild>
-         <Button className="flex gap-2"> <PenBox/> Edit</Button>
+          <Button className="flex gap-2.5" variant="outline"> <Icons.edit className="size-6" /> Edit</Button>
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader>

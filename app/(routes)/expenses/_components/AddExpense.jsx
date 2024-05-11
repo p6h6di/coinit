@@ -34,23 +34,23 @@ function AddExpense({ budgetId, user, refreshData }) {
         setLoading(false);
     }
     return (
-        <div className='border p-5 rounded-lg'>
-            <h2 className='font-bold text-lg'>Add Expense</h2>
-            <div className='mt-2'>
-                <h2 className='text-black font-medium my-1'>Expense Name</h2>
+        <div className='border p-6 rounded-lg'>
+            <h2 className='font-medium text-xl'>Add Expense</h2>
+            <div className='mt-5'>
+                <h2 className='text-black font-medium my-1 text-sm pb-2'>Expense Name</h2>
                 <Input placeholder="e.g. Bedroom Decor"
                     value={name}
                     onChange={(e) => setName(e.target.value)} />
             </div>
-            <div className='mt-2'>
-                <h2 className='text-black font-medium my-1'>Expense Amount</h2>
+            <div className='mt-5'>
+                <h2 className='text-black font-medium my-1 text-sm pb-2'>Expense Amount</h2>
                 <Input placeholder="e.g. 1000"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)} />
             </div>
             <Button disabled={!(name && amount)||loading}
                 onClick={() => addNewExpense()}
-                className="mt-3 w-full">
+                className="mt-5 w-full">
                 {loading ?
                     <Loader className="animate-spin" /> : "Add New Expense"
                 }
